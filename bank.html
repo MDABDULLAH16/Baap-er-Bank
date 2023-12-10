@@ -22,7 +22,7 @@
                 </div>
                 <div class="bg-yellow-500 p-8 rounded-xl">
                     <h2 class="text-2xl">Withdraw</h2>
-                    <h4 class="text-5xl">$00</h4>
+                    <h4 class="text-5xl">$<span id="total-withdraw">00</span></h4>
                 </div>
                 <div class="bg-violet-500 p-8 rounded-xl">
                     <h2 class="text-2xl">Balance</h2>
@@ -41,8 +41,8 @@
                 </div>
                 <div class="bg-cyan-500 p-8  rounded-xl">
                     <h2 class="text-2xl text-white font-semibold">Please Withdraw</h2>
-                    <input class="rounded-md p-2 m-2 font-semibold"  type="number">
-                    <button id="btn-submit"
+                    <input id="withdraw-field" class="rounded-md p-2 m-2 font-semibold"  type="number">
+                    <button id="btn-withdraw"
                         class="bg-amber-600 px-8 py-2 rounded-md hover:bg-blue-600 m-4 text-white font-semibold">Withdraw</button>
                 </div>
         </section>
