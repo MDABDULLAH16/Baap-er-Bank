@@ -16,4 +16,10 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   getTotalDeposit.innerText = totalDeposit;
   //step 6: emety the input field
   input_deposit.value = "";
+  //get main banalce
+  const getBalance = document.getElementById("balance");
+  const banalceSting = getBalance.innerText;
+  const restBanalce = parseFloat(banalceSting);
+  const totalBalance = deposit + restBanalce;
+  getBalance.innerText = totalBalance;
 });
