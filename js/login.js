@@ -9,8 +9,8 @@ document.getElementById("btn-submit").addEventListener("click", function () {
   const password = user_password.value;
 
   if (email === "baaper@bank.com" && password === "aine100") {
-    lo;
+    location.href = "bank.html";
   } else {
-    console.log("tui amar kew na");
+    alert("pass vule gesis!! tui amar kew na");
   }
 });
