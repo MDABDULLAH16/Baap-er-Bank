@@ -5,6 +5,10 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
   const input_deposit = document.getElementById("deposit-field");
   const depositString = input_deposit.value;
   const deposit = parseFloat(depositString);
+  if (isNaN(deposit)) {
+    alert("please input valid number ");
+    return;
+  }
   //   console.log(typeof deposit);
 
   // step 3: get main rest deposit
@@ -31,19 +35,32 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const inputWithdrawString = withdrawField.value;
   const inputWithdraw = parseFloat(inputWithdrawString);
   //   console.log(typeof inputWithdraw, inputWithdraw);
+  withdrawField.value = "";
+  if (isNaN(inputWithdraw)) {
+    alert("please input valid number ");
+    return;
+  }
 
   const getTotalWithdraw = document.getElementById("total-withdraw");
   const totalWithdrawString = getTotalWithdraw.innerText;
   const restTotalWithdraw = parseFloat(totalWithdrawString);
-
-  const totalWithdraw = inputWithdraw + restTotalWithdraw;
-  getTotalWithdraw.innerText = totalWithdraw;
-  withdrawField.value = "";
+  //set withdraw total
+  //   const totalWithdraw = inputWithdraw + restTotalWithdraw;
+  //   getTotalWithdraw.innerText = totalWithdraw;
 
   //   main balace
   const getBalance = document.getElementById("balance");
   const banalceSting = getBalance.innerText;
   const restBanalce = parseFloat(banalceSting);
+
+  if (inputWithdraw > restBanalce) {
+    alert("Baaper Bank a ato taka nai");
+    return;
+  }
+  //set withdraw total for error handling
+
+  const totalWithdraw = inputWithdraw + restTotalWithdraw;
+  getTotalWithdraw.innerText = totalWithdraw;
   const totalBalance = restBanalce - inputWithdraw;
   getBalance.innerText = totalBalance;
 });
